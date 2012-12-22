@@ -1,6 +1,10 @@
 scala-higher-order-functions
 ============================
+
+--------------
 Representation
+--------------
+
 We will work with sets of integers.
 
 As an example to motivate our representation, how would you represent the set of all negative integers? You cannot list them all… one way would be so say: if you give me an integer, I can tell you whether it’s in the set or not: for 3, I say ‘no’; for -1, I say yes.
@@ -13,7 +17,11 @@ type Set = Int => Boolean
 Using this representation, we define a function that tests for the presence of a value in a set:
 
 def contains(s: Set, elem: Int): Boolean = s(elem)
+
+---------------------------
 2.1 Basic Functions on Sets
+---------------------------
+
 Let’s start by implementing basic functions on sets.
 
 Define a function which creates a singleton set from one integer value: the set represents the set of the one given element. Its signature is as follows:
@@ -29,7 +37,11 @@ def diff(s: Set, t: Set): Set
 Define the function filter which selects only the elements of a set that are accepted by a given predicate p. The filtered elements are returned as a new set. The signature of filter is as follows:
 
 def filter(s: Set, p: Int => Boolean): Set
+
+---------------------------------------
 2.2 Queries and Transformations on Sets
+---------------------------------------
+
 In this part, we are interested in functions used to make requests on elements of a set. The first function tests whether a given predicate is true for all elements of the set. This forall function has the following signature:
 
 def forall(s: Set, p: Int => Boolean): Boolean
